@@ -13,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Background
+  - Button
+  - Text
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1460646713
+    locked: 0
+  - name: Button
+    uniqueID: 2465863819
+    locked: 0
+  - name: Text
+    uniqueID: 676801605
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
