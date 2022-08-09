@@ -7,13 +7,11 @@ public class MapRotation : MonoBehaviour
   private float _horizontalSpeed = 2f;
   private float _verticalSpeed = 0.5f;
 
-  public GameObject dRotate;
-  public GameObject aRotate;
-
   private void Update()
   {
-    if (Input.GetKey(KeyCode.D)) {
-      transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dRotate.transform.position), Time.deltaTime * _verticalSpeed);
+    if (Input.GetMouseButton(0)) {
+      transform.Rotate(0f, -Input.GetAxis("Mouse X") * _horizontalSpeed, 0f);
+      transform.Rotate(-Input.GetAxis("Mouse Y") * _verticalSpeed, 0f, 0f);
     }
   }
 }
