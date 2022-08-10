@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
   public static GameManager gameManager = null;
 
+  public int mapIndex;
+
   private void Awake()
   {
     if (gameManager == null)

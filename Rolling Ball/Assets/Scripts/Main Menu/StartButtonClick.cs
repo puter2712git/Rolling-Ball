@@ -7,6 +7,6 @@ public class StartButtonClick : MonoBehaviour
 {
   public void OnStartButtonClick()
   {
-    SceneManager.LoadScene("Playing Test");
+    SceneManager.LoadScene("Stage Select");
   }
 }
