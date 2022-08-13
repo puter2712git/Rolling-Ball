@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
   public static GameManager gameManager = null;
 
   public int mapIndex;
+  public bool isPlayerDead { private set; get;}
 
   private void Awake()
   {
@@ -25,5 +26,17 @@ public class GameManager : MonoBehaviour
   public void StageClear(string sceneName)
   {
     PlayerPrefs.SetInt(sceneName, 1);
+  }
+
+  public void PlayerDied()
+  {
+    isPlayerDead = true;
+    StartCoroutine(PlayerDiedCoroutine());
+  }
+
+  IEnumerator PlayerDiedCoroutine()
+  {
+    yield return new WaitForSeconds(1.5f);
+    isPlayerDead = false;
   }
 }
