@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MapVerticalRotation : MonoBehaviour
 {
-  private float _verticalSpeed = 0.25f;
+  private float _verticalSpeed = 0.1f;
 
   private void Update()
   {

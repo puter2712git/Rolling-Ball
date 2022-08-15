@@ -13,5 +13,6 @@ public class StageButtonClick : MonoBehaviour
     GameManager.gameManager.mapIndex = int.Parse(clickedButton.GetComponentInChildren<TextMeshProUGUI>().text) - 1;
 
     SceneManager.LoadScene("Game Playing");
+    GameManager.gameManager.StageStart();
   }
 }
