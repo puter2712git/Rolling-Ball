@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage Clear.unity
     guid: e1bcef98c9072d24cba1e379a243c579
+  - enabled: 1
+    path: Assets/Scenes/Random Pick.unity
+    guid: eadf3da9051b8764290ab0004147d620
   m_configObjects: {}

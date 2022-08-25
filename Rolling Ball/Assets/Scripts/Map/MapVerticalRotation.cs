@@ -8,21 +8,23 @@ public class MapVerticalRotation : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetKey(KeyCode.W))
-    {
-      transform.Rotate(_verticalSpeed, 0f, 0f);
-    }
-    if (Input.GetKey(KeyCode.S))
-    {
-      transform.Rotate(-_verticalSpeed, 0f, 0f);
-    }
-    if (Input.GetKey(KeyCode.A))
-    {
-      transform.Rotate(0f, _verticalSpeed, 0f);
-    }
-    if (Input.GetKey(KeyCode.D))
-    {
-      transform.Rotate(0f, -_verticalSpeed, 0f);
+    if (GameManager.gameManager.isPlaying) {
+      if (Input.GetKey(KeyCode.W))
+      {
+        transform.Rotate(_verticalSpeed, 0f, 0f);
+      }
+      if (Input.GetKey(KeyCode.S))
+      {
+        transform.Rotate(-_verticalSpeed, 0f, 0f);
+      }
+      if (Input.GetKey(KeyCode.A))
+      {
+        transform.Rotate(0f, _verticalSpeed, 0f);
+      }
+      if (Input.GetKey(KeyCode.D))
+      {
+        transform.Rotate(0f, -_verticalSpeed, 0f);
+      }
     }
   }
 }

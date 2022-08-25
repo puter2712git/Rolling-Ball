@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
   public static GameManager gameManager = null;
 
   public int mapIndex;
+  public bool isFirst;
   public bool isPlayerDead { private set; get; }
   public bool isPlaying { private set; get; }
 
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
       Destroy(gameObject);
     }
 
+    isFirst = true;
+
     DontDestroyOnLoad(gameObject);
   }
 
@@ -29,11 +32,23 @@ public class GameManager : MonoBehaviour
   {
     isPlayerDead = false;
     isPlaying = true;
+    Time.timeScale = 1;
   }
 
-  public void StageClear(string sceneName)
+  public void StageClear(int mapIndex)
   {
-    PlayerPrefs.SetInt(sceneName, 1);
+    if (isFirst)
+    {
+      PlayerPrefs.SetInt("Score", 0);
+      isFirst = false;
+    }
+
+    if (PlayerPrefs.GetInt((mapIndex + 1).ToString()) == 0)
+    {
+      PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 2);
+    }
+
+    PlayerPrefs.SetInt((++mapIndex).ToString(), 1);
     isPlaying = false;
     StartCoroutine(StageClearCoroutine());
   }
@@ -54,5 +69,16 @@ public class GameManager : MonoBehaviour
   {
     yield return new WaitForSeconds(1.5f);
     isPlayerDead = false;
+    SceneManager.LoadScene("Game Playing");
+  }
+
+  public void PauseGame()
+  {
+    isPlaying = false;
+  }
+
+  public void ResumeGame()
+  {
+    isPlaying = true;
   }
 }

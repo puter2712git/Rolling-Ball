@@ -8,7 +8,7 @@ public class MapHorizontalRotation : MonoBehaviour
 
   private void Update()
   {
-    if (Input.GetMouseButton(0))
+    if (Input.GetMouseButton(0) && GameManager.gameManager.isPlaying)
     { 
       transform.Rotate(0f, -Input.GetAxis("Mouse X") * _horizontalSpeed, 0f);
     }

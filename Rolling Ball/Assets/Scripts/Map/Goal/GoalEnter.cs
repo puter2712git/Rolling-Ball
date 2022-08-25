@@ -20,7 +20,7 @@ public class GoalEnter : MonoBehaviour
   {
     if (goalProgressSlider.value == 100 && GameManager.gameManager.isPlaying)
     {
-      GameManager.gameManager.StageClear(SceneManager.GetActiveScene().name);
+      GameManager.gameManager.StageClear(GameManager.gameManager.mapIndex);
     }
   }
 }
